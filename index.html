@@ -2,6 +2,66 @@
 <html>
 <head>
     <style>
+        input[type=submit] {
+            cursor: wait;
+        }
+        input[type=radio] {
+            appearance:none;
+            
+        }
+        input[type=checkbox] {
+            appearance: none;
+            
+        }
+        input[type=radio] {
+            cursor: pointer;
+            height: 10px;
+            width: 70px;
+            border: 10px #100075;
+            border-style: outset;
+            border-radius: 100%;
+            
+        }
+            input[type=radio]:checked {
+                cursor: none;
+                height: 10px;
+                width: 70px;
+                color: #04ff62;
+                border: 10px #04ff62;
+                border-style: outset;
+                border-radius: 100%;
+            }
+        input[type=checkbox] {
+            cursor: pointer;
+            height: 10px;
+            width: 70px;
+            border: 10px #100075;
+            border-style: outset;
+            border-radius: 100%;
+        }
+
+            input[type=checkbox]:checked {
+                cursor: crosshair;
+                height: 10px;
+                width: 70px;
+                color: #04ff62;
+                border: 10px #04ff62;
+                border-style: outset;
+                border-radius: 100%;
+            }
+
+        input[type=text] {
+            background-color: #ffffffff;
+            border: none;
+            color: #100075;
+            padding: 3PX 7PX;
+            text-align: left;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: text;
+            border: 3px dotted #008CBA
+        }
         
         body {
             background-color: #fffcc4;
@@ -11,7 +71,7 @@
             margin: 1%;
             padding: 16px;
             background: #ffe044;
-            flex:;
+            flex: auto;
         }
         h2 {
             font-size: 16px;
@@ -42,31 +102,31 @@
     </style>
 </head>
 <body>
-   
+
     
-    <nav>
-        
-        <section style="font-size:20px;";>Ankieta Testowa</sectrion> 
-        <section style="font-size:11px;";>STAŻ WEB DEVELOPER | 1 MIESIĄC</sectrion>
+    <nav id="nav1" style="visibility: visible; position: unset;">
 
-        <br/>
-        
-        
+        <section style="font-size:20px;" ;>Ankieta Testowa</section>
+        <section style="font-size:11px;" ;>STAŻ WEB DEVELOPER | 1 MIESIĄC</section>
+
+        <br />
+
+
         <form>
-            <h1>
-                Informacje osoby.
-            </h1>
-
-            <label for="1name">First name.</label><br />
-            <input type="text" id="1name"><br />
-            <label for="droga">Kirerunek</label><br />
-            <input type="text" id="droga">
-
-            <br /><br />
-            <h1>
-                Doświadczenia z programowaniem.
-            </h1>
+            
             <section>
+                <h1>
+                    Informacje osoby.
+                </h1>
+                <div>
+                    <label for="1name">First name.</label><br />
+                    <input type="text" id="1name"><br />
+                    <label for="droga">Kirerunek</label><br />
+                    <input type="text" id="droga">
+                </div>
+                <h1>
+                    Doświadczenia z programowaniem.
+                </h1>
                 <table style="text-align: center;width: 100%;max-width: 60%;">
                     <tr>
                         <th>
@@ -205,37 +265,43 @@
             </table>
             <br />
             <lable for="inne_teh"><h1>Inne technologie, które znasz (zostaw brak jak nie znasz).</h1></lable><br />
-            <input style="width: 60%;fo" type="text" id="inne_teh" value="brak"><br />
-            
+            <input style="width: 60%;" type="text" id="inne_teh" value="brak"><br />
+
             <br /><h1>Co cie najbardziej interesuje? </h1>
             <br />
             <div id="checkboxes">
-                <section>Proszę o zaznaczenie maksymalnie 3 obcjie,które chcesz rozwjjać.</section><br />
-            <section>Fronted/Interfejs</section>
-            <input type="checkbox" id="checkbox1" name="INterface" value="INterface">
-            <section>Backend/API</section>
-            <input type="checkbox" id="checkbox2" value="backend">
-            <section>FULLSTACK</section>
-            <input type="checkbox" id="checkbox3" name="fullstack" value="fullstack">
-            <section>UI/UX</section>
-            <input type="checkbox" id="checkbox4" name="ui" value="ui">
-            <section>BAZY DANYCH</section>
-            <input type="checkbox" id="checkbox5" name="baza" value="baza">
-            <section>AI W APLIKACJIACH</section>
-            <input type="checkbox" id="checkbox6" name="aiwapps" value="aiwapps">
-            <section>GRY I INTERAKCJE</section>
-            <input type="checkbox" id="checkbox7" name="gry" value="gry">
-            <section>AUTOMATYZACJA</section>
-            <input type="checkbox" id="checkbox8" name="auto" value="auto">
+                <section style="color:#ff0000;">Proszę o zaznaczenie maksymalnie 3 obcjie,które chcesz rozwjjać.</section><br />
+                <section>Fronted/Interfejs</section>
+                <input type="checkbox" id="checkbox1" name="checkboxs" value="INterface" onclick="return channel()" style="width: 50px" ;>
+                <section>Backend/API</section>
+                <input type="checkbox" id="checkbox2" name="checkboxs" value="backend" onclick="return channel()">
+                <section>FULLSTACK</section>
+                <input type="checkbox" id="checkbox3" name="checkboxs" value="fullstack" onclick="return channel()">
+                <section>UI/UX</section>
+                <input type="checkbox" id="checkbox4" name="checkboxs" value="ui" onclick="return channel()">
+                <section>BAZY DANYCH</section>
+                <input type="checkbox" id="checkbox5" name="checkboxs" value="baza" onclick="return channel()">
+                <section>AI W APLIKACJIACH</section>
+                <input type="checkbox" id="checkbox6" name="checkboxs" value="aiwapps" onclick="return channel()">
+                <section>GRY I INTERAKCJE</section>
+                <input type="checkbox" id="checkbox7" name="checkboxs" value="gry" onclick="return channel()">
+                <section>AUTOMATYZACJA</section>
+                <input type="checkbox" id="checkbox8" name="checkboxs" value="auto" onclick="return channel()">
             </div>
+            <input type="submit" value="Submit">
 
-            <br /><input type="submit" value="Submit">
-            
+
         </form>
+
     </nav>
-    <script type="text/javascript">
-      
+    
+    <script src="script1.js">
+
     </script>
+    <nav id="nav2" style=" visibility: hidden;position: absolute;">
+
+    </nav>
 
 </body>
+
 </html>
