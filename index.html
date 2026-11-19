@@ -2,305 +2,431 @@
 <html>
 <head>
     <style>
-        input[type=submit] {
-            cursor: wait;
-        }
-        input[type=radio] {
-            appearance:none;
-            
-        }
-        input[type=checkbox] {
-            appearance: none;
-            
-        }
-        input[type=radio] {
-            cursor: pointer;
-            height: 10px;
-            width: 70px;
-            border: 10px #100075;
-            border-style: outset;
-            border-radius: 100%;
-            
-        }
-            input[type=radio]:checked {
-                cursor: none;
-                height: 10px;
-                width: 70px;
-                color: #04ff62;
-                border: 10px #04ff62;
-                border-style: outset;
-                border-radius: 100%;
-            }
-        input[type=checkbox] {
-            cursor: pointer;
-            height: 10px;
-            width: 70px;
-            border: 10px #100075;
-            border-style: outset;
-            border-radius: 100%;
+        .container {
+            background-color: #f4f9e1;
+            box-shadow: 0 0 95px 95px #f4f9e1;
         }
 
-            input[type=checkbox]:checked {
-                cursor: crosshair;
-                height: 10px;
-                width: 70px;
-                color: #04ff62;
-                border: 10px #04ff62;
-                border-style: outset;
-                border-radius: 100%;
-            }
-
-        input[type=text] {
-            background-color: #ffffffff;
-            border: none;
-            color: #100075;
-            padding: 3PX 7PX;
-            text-align: left;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: text;
-            border: 3px dotted #008CBA
+        div.card {
+            background-image: linear-gradient(to top, #ffd8b6, #efffb6);
+            padding: 20px;
+            width: fit-content;
+            border: 4px solid transparent;
+            border-radius: 50px;
+            margin: 20px;
+        }
+        input{
+            border: 10px solid transparent;
+            box-shadow: 0 0 0 3px #808080;
+            border-radius: 50px;
         }
         
-        body {
-            background-color: #fffcc4;
-        }
+        .textarena {
+            background-color: #e9f0ce;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+            border: 4px solid;
+            border-color: #48cc8d;
+            outline: none;
+            resize: none;
+            width: 100%;
 
-        nav {
-            margin: 1%;
-            padding: 16px;
-            background: #ffe044;
-            flex: auto;
-        }
-        h2 {
-            font-size: 16px;
-            margin: 0;
-            padding: 5px;
-            background: #4e60f9;
-        }
-
-        h1 {
-            font-size: 16px;
-            margin: 0;
-            padding: 5px;
-            background: #f9aa57;
-        }
-        section {
-            font-size: 16px;
-            color: #100075;
-        }
-        label {
-            font-size: 16px;
-            color: #100075;
-        }
-        input {
-            font-size: 16px;
-            color: #100075;
         }
 
     </style>
+    <title>kopia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    
 </head>
 <body>
 
     
-    <nav id="nav1" style="visibility: visible; position: unset;">
-
-        <section style="font-size:20px;" ;>Ankieta Testowa</section>
-        <section style="font-size:11px;" ;>STAŻ WEB DEVELOPER | 1 MIESIĄC</section>
-
-        <br />
+    <div id="div1" class="container align-items-center ">
+        <div>
+        <h1>Ankieta Testowa STAŻ WEB DEVELOPER | 1 MIESIĄC</h1>
+        </div>
 
 
-        <form>
-            
-            <section>
-                <h1>
-                    Informacje osoby.
-                </h1>
-                <div>
-                    <label for="1name">First name.</label><br />
-                    <input type="text" id="1name"><br />
-                    <label for="droga">Kirerunek</label><br />
-                    <input type="text" id="droga">
+
+        <form id="an">
+            <div>
+                
+                <div id="new_in1" class="card"  >
+                    <div class="card-title text-left" >
+                        <h2>
+                            Informacje osoby.
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" id="error" style="visibility: hidden; position: absolute; border: 10px solid red; background: #ffd8b6; box-shadow: 0 0 5px 5px red; color: red; width: fit-content; font-size: 30px "></div>
+                                <label for="1name">Pierwsze imię.</label>
+                                <input type="text" id="1name" name="1name"   style="width: 100%;"autocomplete="off">
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <label for="droga">Kirerunek.</label><input type="text" id="droga" name="droga"  style="width: 100%;"autocomplete="off" >
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h1>
-                    Doświadczenia z programowaniem.
-                </h1>
-                <table style="text-align: center;width: 100%;max-width: 60%;">
-                    <tr>
-                        <th>
-                            <input type="radio" name="poziom" value="Dopiero zaczynam."> Dopiero zaczynam.
-                        </th>
-                        <th>
-                            <input type="radio" name="poziom" value="Tworzyłem(-am) własne projekty.">Tworzyłem(-am) własne projekty.
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <input type="radio" name="poziom" value="Znam podstawy.">Znam podstawy.
-                        </th>
-                        <th>
-                            <input type="radio" name="poziom" value="Samodzielnie buduje aplikacje.">Samodzielnie buduje aplikacje.
-                        </th>
-                    </tr>
-                    <tr>
-                    </tr>
-                </table>
-            </section>
-            <br />
-            <h1>
-                Ocena swojich umiejętności.
-            </h1>
-            <table style="text-align: center;width: 100%;max-width: 60%;font-size: 19px;">
-                <tr>
-                    <th>Technologie/Umiejętności</th>
-                    <th>Nie znam.</th>
-                    <th>Znam postawy.</th>
-                    <th>Potrafie samodzielnie.</th>
-                    <th>Znam dobrze.</th>
-                </tr>
-                <tr>
-                    <th>HTML</th>
-                    <th>
-                        <input type="radio" name="html" value="Nie znam.">
-                    </th>
-                    <th><input type="radio" name="html" value="Znam podstawy."></th>
-                    <th><input type="radio" name="html" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="html" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>CSS</th>
-                    <th>
-                        <input type="radio" name="CSS" value="Nie znam.">
-                    </th>
-                    <th><input type="radio" name="CSS" value="Znam podstawy."></th>
-                    <th><input type="radio" name="CSS" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="CSS" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>JAVASCRIPT</th>
-                    <th><input type="radio" name="JAVASCRIPT" value="Nie znam."></th>
-                    <th><input type="radio" name="JAVASCRIPT" value="Znam podstawy."></th>
-                    <th><input type="radio" name="JAVASCRIPT" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="JAVASCRIPT" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>TYPESCRIPT</th>
-                    <th><input type="radio" name="TYPESCRIPT" value="Nie znam."></th>
-                    <th><input type="radio" name="TYPESCRIPT" value="Znam podstawy."></th>
-                    <th><input type="radio" name="TYPESCRIPT" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="TYPESCRIPT" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>REACT</th>
-                    <th><input type="radio" name="REACT" value="Nie znam."></th>
-                    <th><input type="radio" name="REACT" value="Znam podstawy."></th>
-                    <th><input type="radio" name="REACT" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="REACT" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>VUE / ANGULAR</th>
-                    <th><input type="radio" name="VUE_ANGULAR" value="Nie znam."></th>
-                    <th><input type="radio" name="VUE_ANGULAR" value="Znam podstawy."></th>
-                    <th><input type="radio" name="VUE_ANGULAR" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="VUE_ANGULAR" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>NODE.JS</th>
-                    <th><input type="radio" name="NODE_JS" value="Nie znam."></th>
-                    <th><input type="radio" name="NODE_JS" value="Znam podstawy."></th>
-                    <th><input type="radio" name="NODE_JS" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="NODE_JS" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>PHP / PYTHON</th>
-                    <th><input type="radio" name="PHP_P" value="Nie znam."></th>
-                    <th><input type="radio" name="PHP_P" value="Znam podstawy."></th>
-                    <th><input type="radio" name="PHP_P" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="PHP_P" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>SQL / bazy danych</th>
-                    <th><input type="radio" name="SQL_DANE" value="Nie znam."></th>
-                    <th><input type="radio" name="SQL_DANE" value="Znam podstawy."></th>
-                    <th><input type="radio" name="SQL_DANE" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="SQL_DANE" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>GIT / GITHUB</th>
-                    <th><input type="radio" name="GG" value="Nie znam."></th>
-                    <th><input type="radio" name="GG" value="Znam podstawy."></th>
-                    <th><input type="radio" name="GG" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="GG" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>REST/API</th>
-                    <th><input type="radio" name="R_API" value="Nie znam."></th>
-                    <th><input type="radio" name="R_API" value="Znam podstawy."></th>
-                    <th><input type="radio" name="R_API" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="R_API" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>RESPONSIVE DESIGN</th>
-                    <th><input type="radio" name="re_di" value="Nie znam."></th>
-                    <th><input type="radio" name="re_di" value="Znam podstawy."></th>
-                    <th><input type="radio" name="re_di" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="re_di" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>DEBUGOWANIE</th>
-                    <th><input type="radio" name="debug" value="Nie znam."></th>
-                    <th><input type="radio" name="debug" value="Znam podstawy."></th>
-                    <th><input type="radio" name="debug" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="debug" value="Znam dobrze."></th>
-                </tr>
-                <tr>
-                    <th>Inne technologie</th>
-                    <th><input type="radio" name="inne" value="Nie znam."></th>
-                    <th><input type="radio" name="inne" value="Znam podstawy."></th>
-                    <th><input type="radio" name="inne" value="Potrafie samodzielnie."></th>
-                    <th><input type="radio" name="inne" value="Znam dobrze."></th>
-                </tr>
-            </table>
-            <br />
-            <lable for="inne_teh"><h1>Inne technologie, które znasz (zostaw brak jak nie znasz).</h1></lable><br />
-            <input style="width: 60%;" type="text" id="inne_teh" value="brak"><br />
+                
+                <div class="card p-10 align-items-center" id="option_part">
+                    <div class="card-title">
+                        Doświadczenia z programowaniem.
+                    </div>
+                    
+                    <div class="card-body">
+                        <select required name="option" id="option" autocomplete="off">
+                            <option name="poziom" value="brak" disabled selected>------</option>
+                            <option name="poziom" value="Dopiero zaczynam">Dopiero zaczynam.</option>
+                            <option name="poziom" value="Znam podstawy">Znam podstawy.</option>
+                            <option name="poziom" value="Tworzyłem(-am) własne projekty">Tworzyłem(-am) własne projekty.</option>
+                            <option name="poziom" value="Samodzielnie buduje aplikacje">Samodzielnie buduje aplikacje.</option>
+                        </select>
+                    </div>
+                </div>
 
-            <br /><h1>Co cie najbardziej interesuje? </h1>
-            <br />
-            <div id="checkboxes">
-                <section style="color:#ff0000;">Proszę o zaznaczenie maksymalnie 3 obcjie,które chcesz rozwjjać.</section><br />
-                <section>Fronted/Interfejs</section>
-                <input type="checkbox" id="checkbox1" name="checkboxs" value="INterface" onclick="return channel()" style="width: 50px" ;>
-                <section>Backend/API</section>
-                <input type="checkbox" id="checkbox2" name="checkboxs" value="backend" onclick="return channel()">
-                <section>FULLSTACK</section>
-                <input type="checkbox" id="checkbox3" name="checkboxs" value="fullstack" onclick="return channel()">
-                <section>UI/UX</section>
-                <input type="checkbox" id="checkbox4" name="checkboxs" value="ui" onclick="return channel()">
-                <section>BAZY DANYCH</section>
-                <input type="checkbox" id="checkbox5" name="checkboxs" value="baza" onclick="return channel()">
-                <section>AI W APLIKACJIACH</section>
-                <input type="checkbox" id="checkbox6" name="checkboxs" value="aiwapps" onclick="return channel()">
-                <section>GRY I INTERAKCJE</section>
-                <input type="checkbox" id="checkbox7" name="checkboxs" value="gry" onclick="return channel()">
-                <section>AUTOMATYZACJA</section>
-                <input type="checkbox" id="checkbox8" name="checkboxs" value="auto" onclick="return channel()">
+                
+                <div class="card" id="the_html">
+                    <div class="card-title text-left">
+                        <h2>
+                        Ocena swojich umiejętności.
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <table style="text-align: center;width: 70%;font-size: 19px;">
+                        <tr>
+                            <th>Technologie/Umiejętności</th>
+                            
+                        </tr>
+                        <tr>
+                            <th>HTML</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="html_1" class="btn-check" type="radio" name="html" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="html_1">Nie znam.</label>
+                                    <input id="html_2" class="btn-check" type="radio" name="html" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="html_2">Znam podstawy.</label>
+                                    <input id="html_3" class="btn-check" type="radio" name="html" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="html_3">Potrafie samodzielnie.</label>
+                                    <input id="html_4" class="btn-check" type="radio" name="html" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="html_4">Potrafie samodzielnie.</label>
+                                </div>
+                                
+                            </th>
+                            
+                        </tr>
+                        <tr>
+                            <th>CSS</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="css_1" class="btn-check" type="radio" name="css" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="css_1">Nie znam.</label>
+                                    <input id="css_2" class="btn-check" type="radio" name="css" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="css_2">Znam podstawy.</label>
+                                    <input id="css_3" class="btn-check" type="radio" name="css" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="css_3">Potrafie samodzielnie.</label>
+                                    <input id="css_4" class="btn-check" type="radio" name="css" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="css_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>JAVASCRIPT</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="javascript_1" class="btn-check" type="radio" name="javascript" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="javascript_1">Nie znam.</label>
+                                    <input id="javascript_2" class="btn-check" type="radio" name="javascript" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="javascript_2">Znam podstawy.</label>
+                                    <input id="javascript_3" class="btn-check" type="radio" name="javascript" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="javascript_3">Potrafie samodzielnie.</label>
+                                    <input id="javascript_4" class="btn-check" type="radio" name="javascript" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="javascript_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>TYPESCRIPT</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="type-script_1" class="btn-check" type="radio" name="type-script" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="type-script_1">Nie znam.</label>
+                                    <input id="type-script_2" class="btn-check" type="radio" name="type-script" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="type-script_2">Znam podstawy.</label>
+                                    <input id="type-script_3" class="btn-check" type="radio" name="type-script" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="type-script_3">Potrafie samodzielnie.</label>
+                                    <input id="type-script_4" class="btn-check" type="radio" name="type-script" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="type-script_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>REACT</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="react_1" class="btn-check" type="radio" name="react" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="react_1">Nie znam.</label>
+                                    <input id="react_2" class="btn-check" type="radio" name="react" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="react_2">Znam podstawy.</label>
+                                    <input id="react_3" class="btn-check" type="radio" name="react" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="react_3">Potrafie samodzielnie.</label>
+                                    <input id="react_4" class="btn-check" type="radio" name="react" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="react_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>VUE / ANGULAR</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="vue_ang_1" class="btn-check" type="radio" name="vue_ang" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="vue_ang_1">Nie znam.</label>
+                                    <input id="vue_ang_2" class="btn-check" type="radio" name="vue_ang" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="vue_ang_2">Znam podstawy.</label>
+                                    <input id="vue_ang_3" class="btn-check" type="radio" name="vue_ang" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="vue_ang_3">Potrafie samodzielnie.</label>
+                                    <input id="vue_ang_4" class="btn-check" type="radio" name="vue_ang" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="vue_ang_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>NODE.JS</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="node_1" class="btn-check" type="radio" name="node" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="node_1">Nie znam.</label>
+                                    <input id="node_2" class="btn-check" type="radio" name="node" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="node_2">Znam podstawy.</label>
+                                    <input id="node_3" class="btn-check" type="radio" name="node" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="node_3">Potrafie samodzielnie.</label>
+                                    <input id="node_4" class="btn-check" type="radio" name="node" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="node_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>PHP / PYTHON</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="php_p_1" class="btn-check" type="radio" name="php_p" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="php_p_1">Nie znam.</label>
+                                    <input id="php_p_2" class="btn-check" type="radio" name="php_p" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="php_p_2">Znam podstawy.</label>
+                                    <input id="php_p_3" class="btn-check" type="radio" name="php_p" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="php_p_3">Potrafie samodzielnie.</label>
+                                    <input id="php_p_4" class="btn-check" type="radio" name="php_p" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="php_p_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>SQL / bazy danych</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="baza_dan_1" class="btn-check" type="radio" name="baza_dan" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="baza_dan_1">Nie znam.</label>
+                                    <input id="baza_dan_2" class="btn-check" type="radio" name="baza_dan" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="baza_dan_2">Znam podstawy.</label>
+                                    <input id="baza_dan_3" class="btn-check" type="radio" name="baza_dan" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="baza_dan_3">Potrafie samodzielnie.</label>
+                                    <input id="baza_dan_4" class="btn-check" type="radio" name="baza_dan" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="baza_dan_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>GIT / GITHUB</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="git_1" class="btn-check" type="radio" name="git" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="git_1">Nie znam.</label>
+                                    <input id="git_2" class="btn-check" type="radio" name="git" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="git_2">Znam podstawy.</label>
+                                    <input id="git_3" class="btn-check" type="radio" name="git" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="git_3">Potrafie samodzielnie.</label>
+                                    <input id="git_4" class="btn-check" type="radio" name="git" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="git_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>REST/API</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="rest_api_1" class="btn-check" type="radio" name="rest_api" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="rest_api_1">Nie znam.</label>
+                                    <input id="rest_api_2" class="btn-check" type="radio" name="rest_api" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="rest_api_2">Znam podstawy.</label>
+                                    <input id="rest_api_3" class="btn-check" type="radio" name="rest_api" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="rest_api_3">Potrafie samodzielnie.</label>
+                                    <input id="rest_api_4" class="btn-check" type="radio" name="rest_api" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="rest_api_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>RESPONSIVE DESIGN</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="desing_1" class="btn-check" type="radio" name="desing" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="desing_1">Nie znam.</label>
+                                    <input id="desing_2" class="btn-check" type="radio" name="desing" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="desing_2">Znam podstawy.</label>
+                                    <input id="desing_3" class="btn-check" type="radio" name="desing" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="desing_3">Potrafie samodzielnie.</label>
+                                    <input id="desing_4" class="btn-check" type="radio" name="desing" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="desing_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>DEBUGOWANIE</th>
+                            <th>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input id="debug_1" class="btn-check" type="radio" name="debug" value="Nie znam." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="debug_1">Nie znam.</label>
+                                    <input id="debug_2" class="btn-check" type="radio" name="debug" value="Znam podstawy." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="debug_2">Znam podstawy.</label>
+                                    <input id="debug_3" class="btn-check" type="radio" name="debug" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="debug_3">Potrafie samodzielnie.</label>
+                                    <input id="debug_4" class="btn-check" type="radio" name="debug" value="Potrafie samodzielnie." autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="debug_4">Potrafie samodzielnie.</label>
+                                </div>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+
+                </div>
+
+                <div id="inetech" class="card">
+                    <div class="card-title text-left">
+                        <h2><lable for="inne_teh">Inne technologie, które znasz (zostaw brak jak nie znasz).</lable></h2>
+                    </div>
+                    <div class="card-body">
+                            <input class="form-control" autocomplete="off" type="text" id="inne_teh" value="brak" name="inne_teh" required minlength="3" maxlength="60" size="60">
+                    </div>
+                </div>
+
+                
+                <div id="checkboxes" class="card">
+                    <div class="card-title text-left">
+                        <h2>Co cie najbardziej interesuje?</h2>
+                    </div>
+                    <div class="card-title text-left" style="color:#ff0000;">
+                        <h3>Proszę o zaznaczenie maksymalnie 3 obcjie,które chcesz rozwjjać.</h3>
+                    </div>
+                    <div>
+                    <table>
+                        <tr>
+                            <th>
+                                <label for="checkbox1">    Fronted/Interfejs</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox1" name="checkboxs" value="INterface" onclick="return channel()">
+                            </th>
+                            <th>
+                                <label for="checkbox2">    Backend/API</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox2" name="checkboxs" value="backend" onclick="return channel()">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="checkbox3">    FULLSTACK</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox3" name="checkboxs" value="fullstack" onclick="return channel()">
+                            </th>
+                            <th>
+                                <label for="checkbox4">UI/UX</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox4" name="checkboxs" value="ui" onclick="return channel()">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="checkbox5">    BAZY DANYCH</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox5" name="checkboxs" value="baza" onclick="return channel()">
+                            </th>
+                            <th>
+                                <label for="checkbox6">    AI W APLIKACJIACH</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox6" name="checkboxs" value="aiwapps" onclick="return channel()">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="checkbox7">    GRY I INTERAKCJE</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox7" name="checkboxs" value="gry" onclick="return channel()">
+                            </th>
+                            <th>
+                                <label for="checkbox8">    AUTOMATYZACJA</label>
+                            </th>
+
+                            <th>
+                                <input type="checkbox" id="checkbox8" name="checkboxs" value="auto" onclick="return channel()">
+                            </th>
+                        </tr>
+
+                    </table>
+                        </div>
+                </div>
+             
+                <div class="card">
+                    <div class="card-title text-left">
+                        <h2>Dotychczasowe projekty.
+                    
+
+                    
+                        Opisz projekt, króry już stworzyłeś(-aś). Co on robił, jak on chodził i co było najtrudniejsze? Jeśli jeszcze nie masz projektu, napis "brak".
+                        </h2>
+                    </div>
+                </div>
+                <div>
+                    <textarea class="textarena" name="projekt" id="projekt" autocomplete="off" maxlength="480" style="min-height: 140px;height:70%">//type here//</textarea>
+                </div>
+
+                <div class="card">
+                    <div class="card-body text-left">
+                    <h2>Co byś chciał(-ała) zbudować jeśli mogłaśbyś/mogłeśbyś stworzyć dowolną aplikację lub stronę, co to by było?</h2>
+                    </div>
+                </div>
+
+                <div>
+                    <textarea class="textarena" name="dreams" id="dreams" maxlength="250" autocomplete="off">//type here// </textarea>
+                </div>
+
+                <div>
+
+                    <button type="submit">Submit</button>
+                    <div class="card text-center" id="info" style="visibility: hidden; position: absolute; border: 10px solid red; background: #ffd8b6; box-shadow: 0 0 5px 5px red; color: red; width: fit-content; font-size: 30px ">Błąd w imieniu.</div>
+                </div>
             </div>
-            <input type="submit" value="Submit">
-
-
         </form>
 
-    </nav>
+    </div>
     
     <script src="script1.js">
 
     </script>
-    <nav id="nav2" style=" visibility: hidden;position: absolute;">
-
-    </nav>
+    
 
 </body>
 

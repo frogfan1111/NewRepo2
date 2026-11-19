@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>strona</title>
+    <style>
+        textarea {
+            width: 40%;
+            height: 140px;
+            padding: 1px;
+            box-sizing: border-box;
+            border: 10px solid #3820cd;
+            border-radius: 4px;
+            border-style: outset;
+            background-color: #fffcc4;
+            font-size: 12px;
+            resize: none;
+        }
+        input[type=submit] {
+            cursor: wait;
+        }
+        input[type=radio] {
+            appearance:none;
+            
+        }
+        input[type=checkbox] {
+            appearance: none;
+            
+        }
+        input[type=radio] {
+            cursor: pointer;
+            height: 10px;
+            width: 70px;
+            border: 10px #100075;
+            border-style: outset;
+            border-radius: 100%;
+            
+        }
+            input[type=radio]:checked {
+                cursor: none;
+                height: 10px;
+                width: 70px;
+                color: #04ff62;
+                border: 10px #04ff62;
+                border-style: outset;
+                border-radius: 100%;
+            }
+        input[type=checkbox] {
+            cursor: pointer;
+            height: 10px;
+            width: 70px;
+            border: 10px #100075;
+            border-style: outset;
+            border-radius: 100%;
+        }
+
+            input[type=checkbox]:checked {
+                cursor: crosshair;
+                height: 10px;
+                width: 70px;
+                color: #04ff62;
+                border: 10px #04ff62;
+                border-style: outset;
+                border-radius: 100%;
+            }
+
+        input[type=text] {
+            background-color: #ffffffff;
+            border: none;
+            color: #100075;
+            padding: 3PX 7PX;
+            text-align: left;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: text;
+            border: 3px dotted #008CBA
+        }
+        
+        body {
+            background-color: #fffcc4;
+        }
+
+        nav {
+            margin: 1%;
+            padding: 16px;
+            background: #ffe044;
+            flex: auto;
+        }
+        h2 {
+            font-size: 16px;
+            margin: 0;
+            padding: 5px;
+            background: #4e60f9;
+        }
+
+        h1 {
+            font-size: 16px;
+            margin: 0;
+            padding: 5px;
+            background: #f9aa57;
+            color: #100075;
+        }
+        section {
+            font-size: 16px;
+            color: #100075;
+        }
+        label {
+            font-size: 16px;
+            color: #100075;
+        }
+        input {
+            font-size: 16px;
+            color: #100075;
+        }
+        th {
+            color: #100075;
+        }
+    </style>
+
+</head>
+<body>
+
+    
+    <nav id="nav1" style="visibility: visible; position: unset;">
+
+        <section style="font-size:20px;" ;>Ankieta Testowa</section>
+        <section style="font-size:11px;" ;>STAŻ WEB DEVELOPER | 1 MIESIĄC</section>
+
+        <br />
+
+
+        <form>
+            
+            <section>
+                <h1>
+                    Informacje osoby.
+                </h1>
+                <div>
+                    <label for="1name">Pierwsze imię.</label><br />
+                    <input type="text" id="1name" name="1name" required minlength="3" maxlength="60" size="40"><br />
+                    <label for="droga">Kirerunek.</label><br />
+                    <input type="text" id="droga" name="droga" required minlength="3" maxlength="60" size="40">
+                </div>
+                <h1>
+                    Doświadczenia z programowaniem.
+                </h1>
+                <table style="text-align: center;width: 100%;max-width: 60%;">
+                    <tr>
+                        <th>
+                            <input type="radio" name="poziom" value="Dopiero zaczynam."> Dopiero zaczynam.
+                        </th>
+                        <th>
+                            <input type="radio" name="poziom" value="Tworzyłem(-am) własne projekty.">Tworzyłem(-am) własne projekty.
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input type="radio" name="poziom" value="Znam podstawy.">Znam podstawy.
+                        </th>
+                        <th>
+                            <input type="radio" name="poziom" value="Samodzielnie buduje aplikacje.">Samodzielnie buduje aplikacje.
+                        </th>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+            </section>
+            <br />
+            <h1>
+                Ocena swojich umiejętności.
+            </h1>
+            <table style="text-align: center;width: 100%;max-width: 60%;font-size: 19px;">
+                <tr>
+                    <th>Technologie/Umiejętności</th>
+                    <th>Nie znam.</th>
+                    <th>Znam postawy.</th>
+                    <th>Potrafie samodzielnie.</th>
+                    <th>Znam dobrze.</th>
+                </tr>
+                <tr>
+                    <th>HTML</th>
+                    <th>
+                        <input type="radio" name="html" value="Nie znam.">
+                    </th>
+                    <th><input type="radio" name="html" value="Znam podstawy."></th>
+                    <th><input type="radio" name="html" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="html" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>CSS</th>
+                    <th>
+                        <input type="radio" name="CSS" value="Nie znam.">
+                    </th>
+                    <th><input type="radio" name="CSS" value="Znam podstawy."></th>
+                    <th><input type="radio" name="CSS" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="CSS" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>JAVASCRIPT</th>
+                    <th><input type="radio" name="JAVASCRIPT" value="Nie znam."></th>
+                    <th><input type="radio" name="JAVASCRIPT" value="Znam podstawy."></th>
+                    <th><input type="radio" name="JAVASCRIPT" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="JAVASCRIPT" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>TYPESCRIPT</th>
+                    <th><input type="radio" name="TYPESCRIPT" value="Nie znam."></th>
+                    <th><input type="radio" name="TYPESCRIPT" value="Znam podstawy."></th>
+                    <th><input type="radio" name="TYPESCRIPT" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="TYPESCRIPT" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>REACT</th>
+                    <th><input type="radio" name="REACT" value="Nie znam."></th>
+                    <th><input type="radio" name="REACT" value="Znam podstawy."></th>
+                    <th><input type="radio" name="REACT" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="REACT" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>VUE / ANGULAR</th>
+                    <th><input type="radio" name="VUE_ANGULAR" value="Nie znam."></th>
+                    <th><input type="radio" name="VUE_ANGULAR" value="Znam podstawy."></th>
+                    <th><input type="radio" name="VUE_ANGULAR" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="VUE_ANGULAR" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>NODE.JS</th>
+                    <th><input type="radio" name="NODE_JS" value="Nie znam."></th>
+                    <th><input type="radio" name="NODE_JS" value="Znam podstawy."></th>
+                    <th><input type="radio" name="NODE_JS" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="NODE_JS" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>PHP / PYTHON</th>
+                    <th><input type="radio" name="PHP_P" value="Nie znam."></th>
+                    <th><input type="radio" name="PHP_P" value="Znam podstawy."></th>
+                    <th><input type="radio" name="PHP_P" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="PHP_P" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>SQL / bazy danych</th>
+                    <th><input type="radio" name="SQL_DANE" value="Nie znam."></th>
+                    <th><input type="radio" name="SQL_DANE" value="Znam podstawy."></th>
+                    <th><input type="radio" name="SQL_DANE" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="SQL_DANE" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>GIT / GITHUB</th>
+                    <th><input type="radio" name="GG" value="Nie znam."></th>
+                    <th><input type="radio" name="GG" value="Znam podstawy."></th>
+                    <th><input type="radio" name="GG" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="GG" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>REST/API</th>
+                    <th><input type="radio" name="R_API" value="Nie znam."></th>
+                    <th><input type="radio" name="R_API" value="Znam podstawy."></th>
+                    <th><input type="radio" name="R_API" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="R_API" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>RESPONSIVE DESIGN</th>
+                    <th><input type="radio" name="re_di" value="Nie znam."></th>
+                    <th><input type="radio" name="re_di" value="Znam podstawy."></th>
+                    <th><input type="radio" name="re_di" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="re_di" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>DEBUGOWANIE</th>
+                    <th><input type="radio" name="debug" value="Nie znam."></th>
+                    <th><input type="radio" name="debug" value="Znam podstawy."></th>
+                    <th><input type="radio" name="debug" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="debug" value="Znam dobrze."></th>
+                </tr>
+                <tr>
+                    <th>Inne technologie</th>
+                    <th><input type="radio" name="inne" value="Nie znam."></th>
+                    <th><input type="radio" name="inne" value="Znam podstawy."></th>
+                    <th><input type="radio" name="inne" value="Potrafie samodzielnie."></th>
+                    <th><input type="radio" name="inne" value="Znam dobrze."></th>
+                </tr>
+            </table>
+            <br />
+            <lable for="inne_teh"><h1>Inne technologie, które znasz (zostaw brak jak nie znasz).</h1></lable><br />
+            <input style="width: 60%;" type="text" id="inne_teh" value="brak" name="inne_teh" required minlength="3" maxlength="60" size="60"><br />
+            <br /><h1>Co cie najbardziej interesuje? </h1><br />
+            <div id="checkboxes">
+                
+                    <section style="color:#ff0000;">Proszę o zaznaczenie maksymalnie 3 obcjie,które chcesz rozwjjać.</section>
+                    <br />
+                    <table style="text-align: center;width: 50%;">
+                        <tr>
+                            <th>
+                                <label for="checkbox1">    Fronted/Interfejs</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox1" name="checkboxs" value="INterface" onclick="return channel()">
+                            </th>
+                            <th>
+                                <label for="checkbox2">    Backend/API</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox2" name="checkboxs" value="backend" onclick="return channel()">
+                            </th>
+                        </tr>
+                        <tr>
+                             <th>
+                                <label for="checkbox3">    FULLSTACK</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox3" name="checkboxs" value="fullstack" onclick="return channel()">
+                            </th>
+                            <th>
+                                <label for="checkbox4">UI/UX</label>
+                             </th>
+                            <th>
+                                <input type="checkbox" id="checkbox4" name="checkboxs" value="ui" onclick="return channel()">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="checkbox5">    BAZY DANYCH</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox5" name="checkboxs" value="baza" onclick="return channel()">
+                            </th>
+                            <th>
+                                <label for="checkbox6">    AI W APLIKACJIACH</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox6" name="checkboxs" value="aiwapps" onclick="return channel()">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="checkbox7">    GRY I INTERAKCJE</label>
+                            </th>
+                            <th>
+                                <input type="checkbox" id="checkbox7" name="checkboxs" value="gry" onclick="return channel()">
+                            </th>
+                            <th>
+                                <label for="checkbox8">    AUTOMATYZACJA</label>
+                            </th>
+                            
+                            <th>
+                                <input type="checkbox" id="checkbox8" name="checkboxs" value="auto" onclick="return channel()">
+                            </th>
+                        </tr>
+
+</table>
+            </div>
+            <h1>Dotychczasowe projekty.</h1>
+            <br/>
+            <section>
+                Opisz projekt, króry już stworzyłeś(-aś). Co on robił, jak on chodził i co było najtrudniejsze? Jeśli jeszcze nie masz projektu, napis "brak".
+            </section>
+            <br/>
+            <div>
+                <textarea name="porojekt" id="projekt" maxlength="230"></textarea>
+            </div>
+            <br/>
+            <h1>
+                Co byś chciał(-ała) zbudować jeśli mogłaśbyś/mogłeśbyś stworzyć dowolną aplikację lub stronę, co to by było?
+            </h1>
+            <br/>
+            <textarea name="dreams" id="dreams" maxlength="150"></textarea>
+
+            <br/><input type="submit" value="Submit" >
+
+
+        </form>
+
+    </nav>
+    
+    <script src="script1.js">
+
+    </script>
+    
+    <nav id="nav2" style=" visibility: hidden;position: absolute;">
+
+    </nav>
+
+</body>
+
+</html>
