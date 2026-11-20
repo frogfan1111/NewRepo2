@@ -43,7 +43,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     
 </head>
-<body>
+<body id="body.1">
 
     
     <div id="div1" class="container align-items-center ">
@@ -326,7 +326,7 @@
                         <h3>Proszę o zaznaczenie maksymalnie 3 obcjie,które chcesz rozwjjać.</h3>
                     </div>
                     <div>
-                    <table>
+                    <table style="width:100%;">
                         <tr>
                             <th>
                                 <label for="checkbox1">    Fronted/Interfejs</label>
@@ -413,11 +413,14 @@
                     <textarea class="textarena" name="dreams" id="dreams" maxlength="250" autocomplete="off">//type here// </textarea>
                 </div>
 
-                <div>
-
-                    <button type="submit">Submit</button>
+                <div class="card">
+                    <div class="" style="padding:10px;" >
+                        <label for="poczta">email</label>
+                        <input type="text" class="input" name="email" id="poczta" style="width:100%" autocomplete="off">
+                    </div>
+                    <button type="submit" style="border-radius: 60px;height:60px;">Submit</button>
                     <div class="card text-center" id="info" style="visibility: hidden; position: absolute; border: 10px solid red; background: #ffd8b6; box-shadow: 0 0 5px 5px red; color: red; width: fit-content; font-size: 30px ">Błąd w imieniu.</div>
-                </div>
+                </div=">
             </div>
         </form>
 

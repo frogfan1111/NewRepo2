@@ -15,7 +15,7 @@ function channel() {
 };
 //new(idk)
 //<input type="submit" value="Submit"> <-   remember 1225
-
+//refrenc :0
 const name = document.getElementById('1name')
 const kierunek = document.getElementById('droga')
 const from1 = document.getElementById('an')
@@ -25,7 +25,9 @@ const original_post = document.getElementById('option')
 const op_body = document.getElementById('option_part')
 const porject = document.getElementById('projekt')
 const dream = document.getElementById('dreams')
-
+let testtest = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
+//are you amogn us!
+const form = document.querySelector('#an') ;
 // osu
 const osu_1_1 = document.getElementsByName('html')
 const osu_2 = document.getElementsByName('css')
@@ -57,9 +59,24 @@ function when_no_er() {
     
 
 }
-
-//--
+//
+async function sendData() {
+    const formData = new FormData(form);
+    try {
+        const response = await fetch("index.html", {
+            method: "POST",
+            body: formData,
+        })
+        
+    }
+    catch (e) {
+        console.error(e);
+    }
+}
+//---
 an.addEventListener('submit', (e) => {
+    e.preventDefault()
+    var do_send = true;
     //--1_section--//
     let messages = [];
     let messages2 = [];
@@ -106,7 +123,7 @@ an.addEventListener('submit', (e) => {
     //--2_section--//
     if (original_post.value === 'brak') {
         op_body.style.boxShadow = "0 0 5px 5px red";
-        e.preventDefault()
+        do_send = false;
         messages2.push('Błąd w doświadczeniach')
     } else { op_body.style.boxShadow = "0 0 2px 1px #00ff4d" }
     //--end_of_section_2
@@ -211,7 +228,7 @@ an.addEventListener('submit', (e) => {
         } 
         else
         {
-            e.preventDefault()
+            do_send = false;
             the_html.style.boxShadow = "0 0 5px 5px red"
             messages2.push('Błąd w ocenie swojich umiejętnościach')
             break;
@@ -224,24 +241,38 @@ an.addEventListener('submit', (e) => {
     {
         document.getElementById('projekt').style.boxShadow = "0 0 5px 5px red";
         messages2.push('Błąd w Dotychczasowych projektach')
-        e.preventDefault()
+        do_send = false;
     }else {
         document.getElementById('projekt').style.boxShadow = "0 0 2px 1px #00ff4d";
     }
     if (dream.value == '//type here// ')
     {
         dream.style.boxShadow = "0 0 5px 5px red";
-        messages2.push('Błąd w ostatnim okienku')
-        e.preventDefault()
+        messages2.push('Błąd w Co byś chciał(-ała) zbudować')
+        do_send = false;
 
     }else {
         dream.style.boxShadow = "0 0 2px 1px #00ff4d";
     }
+    //email
+    
+    var email = document.getElementById('poczta').value;
+    if (testtest.test(email)) {
+        document.getElementById('poczta').style.boxShadow = "0 0 2px 1px #00ff4d";
+    } else {
+        document.getElementById('poczta').style.boxShadow = "0 0 5px 5px red";
+        messages2.push("Błąd w email'u")
+    }
     //text
     if (messages2.length > 0) {
         when_er();
-        e.preventDefault()
+        do_send = false;
         errorEl.innerText = messages.join(', ')
         infer.innerText = messages2.join(', ')
-    } else { when_no_er();}
+    } else { when_no_er(); }
+    if (do_send == true) {
+        document.getElementById('body.1').style.background = "#ccffcc";
+        sendData()
+    }
 })
+//
